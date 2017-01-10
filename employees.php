@@ -19,7 +19,7 @@
 
         div.employ_div {
             width: auto;
-            height: 160px;
+            height: 180px;
         }
 
         .employ_div table {
@@ -40,9 +40,9 @@
 <?php
 $pageSize = 5;
 $curPage = empty($_GET['curPage']) ? 1 : $_GET['curPage'];
-$mysqli = new mysqli('win.lonmee.com', 'root', 'usbw', 'employee');
-if ($mysqli->error) {
-    die($mysqli->error);
+$mysqli = new mysqli('win.lonmee.com', 'root', 'usbw', 'employee', 3307);
+if ($mysqli->connect_errno) {
+    die($mysqli->connect_errno);
 }
 $mysqli->set_charset('utf8');
 $sql = "SELECT COUNT(id) FROM employees";
