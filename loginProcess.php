@@ -1,9 +1,9 @@
 <?php
 $id = $_POST['id'];
 $pwd = $_POST['pwd'];
-$mysqli = new mysqli('win.lonmee.com', 'root', 'usbw', 'employee');
-if ($mysqli->error) {
-    die($mysqli->error);
+$mysqli = new mysqli('win.lonmee.com', 'root', 'usbw', 'employee', 3307);
+if ($mysqli->connect_errno) {
+    die($mysqli->connect_errno);
 }
 $mysqli->set_charset('utf8');
 $sql = "SELECT password, name FROM admin WHERE id=$id;";
