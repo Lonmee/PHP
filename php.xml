@@ -17,7 +17,7 @@
   <component name="PhpInterpretersPhpInfoCache">
     <phpInfoCache>
       <interpreter name="PHP 5.6">
-        <phpinfo binary_type="PHP" php_cli="/usr/bin/php" path_separator=":" version="5.6.27" warning="PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/extensions/no-debug-non-zts-20131226/php_mysql.dll' - dlopen(/usr/lib/php/extensions/no-debug-non-zts-20131226/php_mysql.dll, 9): image not found in Unknown on line 0&#10;PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php/extensions/no-debug-non-zts-20131226/php_mysqli.dll' - dlopen(/usr/lib/php/extensions/no-debug-non-zts-20131226/php_mysqli.dll, 9): image not found in Unknown on line 0&#10;">
+        <phpinfo binary_type="PHP" php_cli="/usr/bin/php" path_separator=":" version="5.6.27">
           <additional_php_ini />
           <configuration_file>/etc/php.ini</configuration_file>
           <configuration_options>
