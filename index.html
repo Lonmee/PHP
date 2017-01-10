@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="refresh" content="10; url=http://www.baidu.com/"/>-->
+    <title>Title</title>
+</head>
+<body onload="init()">
+<script>
+    function init() {
+        document.cookie.perinfo = {name:'lonmee', sex:'male'};
+    }
+</script>
+<form action="index.php" method="post">
+    <input type="checkbox" name="cb" value="1">one
+    <input type="checkbox" name="cb" value="2">two
+    <input type="checkbox" name="cb" value="3">three
+    <input type="checkbox" name="cb" value="4">four
+    <!--<input type="checkbox" name="cb[]" value="1">one-->
+    <!--<input type="checkbox" name="cb[]" value="2">two-->
+    <!--<input type="checkbox" name="cb[]" value="3">three-->
+    <!--<input type="checkbox" name="cb[]" value="4">four-->
+    <input type="submit" value="confirm">
+</form>
+</body>
+</html>
