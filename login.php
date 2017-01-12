@@ -8,7 +8,7 @@
     <table>
         <tr>
             <td>用户id</td>
-            <td><input type="text" name="id"></td>
+            <td><input type="text" name="id" value=<?php session_start(); echo $_SESSION['name']; ?>></td>
         </tr>
         <tr>
             <td>密&nbsp;&nbsp;&nbsp;&nbsp;码</td>
@@ -22,7 +22,7 @@
 <?php
 if (!empty($_GET['errno'])) {
     switch ($_GET['errno']) {
-         case '1':
+        case '1':
             echo "<font color='#a52a2a', size='3'>your name or password is wrong</font> ";
             break;
     }

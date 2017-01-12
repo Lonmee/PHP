@@ -26,6 +26,11 @@
             float: left;
             margin: 4px;
         }
+
+        .short_txt {
+            width: 30px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -40,7 +45,8 @@
 <?php
 $pageSize = 5;
 $curPage = empty($_GET['curPage']) ? 1 : $_GET['curPage'];
-$mysqli = new mysqli('win.lonmee.com', 'root', 'usbw', 'employee', 3307);
+//$mysqli = new mysqli('win.lonmee.com', 'root', 'usbw', 'employee', 3307);
+$mysqli = new mysqli('mac.lonmee.com', 'root', 'root', 'employee');
 if ($mysqli->connect_errno) {
     die($mysqli->connect_errno);
 }
@@ -53,7 +59,7 @@ if (!empty($resCount)) {
 }
 
 $totalPage = ceil($rowCount / $pageSize);
-
+$curPage = min($curPage, $totalPage);
 $sql = "SELECT * FROM employees LIMIT " . ($curPage - 1) * $pageSize . ", $pageSize";
 $mysqli_result = $mysqli->query($sql);
 echo "<div class=employ_div>";
@@ -75,11 +81,16 @@ for ($i = 0; $i < $mysqli_result->num_rows; $i++) {
     }
     echo "<td><a href='#'>删除</a></td><td><a href='#'>修改</a></td></tr>";
 }
+$mysqli_result->free();
+$mysqli->close();
 echo "</table></div>";
 
+//region pages index
 //for ($i = 1; $i <= $totalPage; $i++) {
 //    echo "<a href='employees.php?curPage=$i'>$i</a>&nbsp;";
 //}
+//endregion
+
 if ($curPage > 1) {
     $prepage = $curPage - 1;
     echo "<a href='employees.php?curPage=$prepage'>上一页</a>&nbsp;";
@@ -90,8 +101,13 @@ if ($curPage < $totalPage) {
     echo "<a href='employees.php?curPage=$nextPage'>下一页</a>&nbsp;";
 }
 
-$mysqli_result->free();
-$mysqli->close();
+echo "<br/>当前页 $curPage / $totalPage 总页数";
+
 ?>
+<form action="employees.php">
+    跳至<input class="short_txt" type="text" name="curPage" maxlength="2">页
+    <input type="submit" value="GO">
+
+</form>
 </body>
 </html>
