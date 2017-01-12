@@ -1,7 +1,7 @@
 <?php
 $id = $_POST['id'];
 $pwd = $_POST['pwd'];
-$mysqli = new mysqli('www.lonmee.com', 'root', 'root', 'employee', 3307);
+$mysqli = new mysqli('www.lonmee.com', 'root', 'root', 'employee');
 if ($mysqli->connect_errno) {
     die($mysqli->connect_errno);
 }
