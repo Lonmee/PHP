@@ -8,7 +8,7 @@
     <table>
         <tr>
             <td>用户id</td>
-            <td><input type="text" name="id" value=<?php session_start(); echo $_SESSION['name']; ?>></td>
+            <td><input type="text" name="id"></td>
         </tr>
         <tr>
             <td>密&nbsp;&nbsp;&nbsp;&nbsp;码</td>
