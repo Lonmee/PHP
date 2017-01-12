@@ -10,3 +10,4 @@ require 'Emp.php';
 session_start();
 var_dump($_SESSION);
 
+print_r($_SESSION['emp']);
