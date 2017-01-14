@@ -17,3 +17,5 @@ echo "<h1>Welcome to shopping</h1>
     <a href=\"ShopProcess.php?bookid=i4&bookname=n4&".SID."\">name4</a><br>
     <hr>
     <a href=\"chart.php?".SID."\">checkout list</a>";
+
+session_set_save_handler()
