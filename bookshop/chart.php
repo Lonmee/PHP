@@ -6,6 +6,7 @@
  * Time: 1:23 PM
  */
 
+echo '<meta charset="utf-8">';
 echo "<h1>当前已选商品</h1>";
 if (isset($_GET['PHPSESSID'])) {
     session_id($_GET['PHPSESSID']);

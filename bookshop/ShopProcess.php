@@ -14,5 +14,6 @@ if (isset($_GET['PHPSESSID'])) {
 session_start();
 $_SESSION[$bookid] = $bookname;
 
+echo '<meta charset="utf-8">';
 echo "加入购物车";
 echo "<a href='BookShop.php?".SID."'>返回继续购买</a>";
